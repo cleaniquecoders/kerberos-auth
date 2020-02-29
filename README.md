@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/cleanique-coders/kerberos-auth.svg?branch=master)](https://travis-ci.org/cleanique-coders/kerberos-auth) [![Latest Stable Version](https://poser.pugx.org/cleanique-coders/kerberos-auth/v/stable)](https://packagist.org/packages/cleanique-coders/kerberos-auth) [![Total Downloads](https://poser.pugx.org/cleanique-coders/kerberos-auth/downloads)](https://packagist.org/packages/cleanique-coders/kerberos-auth) [![License](https://poser.pugx.org/cleanique-coders/kerberos-auth/license)](https://packagist.org/packages/cleanique-coders/kerberos-auth)
+[![Build Status](https://travis-ci.org/cleaniquecoders/kerberos-auth.svg?branch=master)](https://travis-ci.org/cleaniquecoders/kerberos-auth) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/kerberos-auth/v/stable)](https://packagist.org/packages/cleaniquecoders/kerberos-auth) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/kerberos-auth/downloads)](https://packagist.org/packages/cleaniquecoders/kerberos-auth) [![License](https://poser.pugx.org/cleaniquecoders/kerberos-auth/license)](https://packagist.org/packages/cleaniquecoders/kerberos-auth)
 
 ## Kerberos Auth
 
@@ -7,10 +7,10 @@ This package allowed yout to authenticate your application using Kerberos.
 
 ## Installation
 
-1. In order to install `cleanique-coders/kerberos-auth` in your Laravel project, just run the *composer require* command from your terminal:
+1. In order to install `cleaniquecoders/kerberos-auth` in your Laravel project, just run the *composer require* command from your terminal:
 
 ```
-$ composer require cleanique-coders/kerberos-auth
+$ composer require cleaniquecoders/kerberos-auth
 ```
 
 
@@ -63,7 +63,7 @@ $ vendor/bin/phpunit  --testdox --verbose
 
 ## Contributing
 
-Thank you for considering contributing to the `cleanique-coders/kerberos-auth`!
+Thank you for considering contributing to the `cleaniquecoders/kerberos-auth`!
 
 ### Bug Reports
 
@@ -75,7 +75,7 @@ Remember, bug reports are created in the hope that others with the same problem 
 
 ## Coding Style
 
-`cleanique-coders/kerberos-auth` follows the PSR-2 coding standard and the PSR-4 autoloading standard. 
+`cleaniquecoders/kerberos-auth` follows the PSR-2 coding standard and the PSR-4 autoloading standard. 
 
 You may use PHP CS Fixer in order to keep things standardised. PHP CS Fixer configuration can be found in `.php_cs`.
 

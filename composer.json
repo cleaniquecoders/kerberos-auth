@@ -1,5 +1,5 @@
 {
-    "name": "cleanique-coders/kerberos-auth",
+    "name": "cleaniquecoders/kerberos-auth",
     "description": "Built with Laravel Standalone Package Creator",
     "keywords": ["package", "laravel", "kerberos", "auth"],
     "license": "MIT",
