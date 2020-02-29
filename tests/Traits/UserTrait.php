@@ -15,7 +15,7 @@ trait UserTrait
     {
         $now = \Carbon\Carbon::now();
         \DB::table('users')->insert([
-            'name'       => 'Kerberos',
+            'name'       => 'User',
             'email'      => 'hello@phpunit.com',
             'password'   => \Hash::make('456'),
             'created_at' => $now,
@@ -23,7 +23,7 @@ trait UserTrait
         ]);
 
         \DB::table('users')->insert([
-            'name'       => 'Kerberos',
+            'name'       => 'User',
             'email'      => 'hi@phpunit.com',
             'password'   => \Hash::make('456'),
             'created_at' => $now,
