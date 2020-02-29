@@ -1,9 +1,9 @@
 
 [![Build Status](https://travis-ci.org/cleanique-coders/kerberos-auth.svg?branch=master)](https://travis-ci.org/cleanique-coders/kerberos-auth) [![Latest Stable Version](https://poser.pugx.org/cleanique-coders/kerberos-auth/v/stable)](https://packagist.org/packages/cleanique-coders/kerberos-auth) [![Total Downloads](https://poser.pugx.org/cleanique-coders/kerberos-auth/downloads)](https://packagist.org/packages/cleanique-coders/kerberos-auth) [![License](https://poser.pugx.org/cleanique-coders/kerberos-auth/license)](https://packagist.org/packages/cleanique-coders/kerberos-auth)
 
-## About Your Package
+## Kerberos Auth
 
-Tell people about your package
+This package allowed yout to authenticate your application using Kerberos.
 
 ## Installation
 
@@ -13,19 +13,45 @@ Tell people about your package
 $ composer require cleanique-coders/kerberos-auth
 ```
 
-2. Then in your `config/app.php` add the following to the providers array:
 
-```php
-CleaniqueCoders\KerberosAuth\KerberosAuthServiceProvider::class,
+2. Publish Kerberos Configuration:
+
+```
+$ php artisan vendor:publish --tag="kerberos-auth-config"
 ```
 
-3. In the same `config/app.php` add the following to the aliases array:
+2. Install the `KerberosMiddleware` in `app/Http/Kernel.php` in `web` group middleware:
 
 ```php
-'KerberosAuth' => CleaniqueCoders\KerberosAuth\KerberosAuthFacade::class,
+protected $middlewareGroups = [
+    'web' => [
+    	...
+    	\CleaniqueCoders\KerberosAuth\Http\Middleware\KerberosMiddleware::class,
+    	...
+    ]
+];
 ```
 
 ## Usage
+
+In order to enable Kerberos Authentication, you need to enable it. Open up your `.env` file and add the following:
+
+```
+KERBEROS_ENABLED=true
+```
+
+You may modify the Kerberos header passed to your application. If not, by default it will be `X-REMOTE-USER`:
+
+```
+KERBEROS_HEADER_KEY="X-REMOTE-USER-IDENTIFIER"
+```
+
+By default, Kerberos will use `App\Models\User::class` and using `email` field to identify user's identity and authenticate to the application. You may want to change this configuration in `.env` if you have different model and field want to use for authentication.
+
+```
+KERBEROS_MODEL="\App\User"
+KERBEROS_IDENTIFIER="employee_id"
+```
 
 ## Test
 
