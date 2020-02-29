@@ -2,8 +2,6 @@
 
 namespace CleaniqueCoders\KerberosAuth\Tests;
 
-use Illuminate\Support\Facades\Schema;
-
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     use Traits\TestCaseTrait;
