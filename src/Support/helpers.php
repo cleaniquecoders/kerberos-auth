@@ -1,12 +1,14 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
  * Check Kerberos Auth Status
  */
 if (! function_exists('isKerberosEnabled')) {
     function isKerberosEnabled()
     {
-        return config('auth.kerberos.enabled');
+        return config('kerberos.enabled');
     }
 }
 
@@ -14,10 +16,10 @@ if (! function_exists('isKerberosEnabled')) {
  * Get Kerberos Auth User
  */
 if (! function_exists('getKerberosUser')) {
-    function getKerberosUser()
+    function getKerberosUser(Request $request)
     {
         return config('kerberos.model')::query()
-            ->where(config('kerberos.identifier'), getUsernameFromRequest())
+            ->where(config('kerberos.identifier'), getUsernameFromRequest($request))
             ->firstOrFail();
     }
 }
@@ -26,12 +28,10 @@ if (! function_exists('getKerberosUser')) {
  * Get Username from Header
  */
 if (! function_exists('getUsernameFromRequest')) {
-    function getUsernameFromRequest()
+    function getUsernameFromRequest(Request $request)
     {
-        return strtolower(
-            request()->header(
-                config('kerberos.header_key')
-            )
+        return $request->header(
+            config('kerberos.header_key')
         );
     }
 }

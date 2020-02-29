@@ -5,4 +5,5 @@ return [
     'model'      => env('KERBEROS_MODEL', \App\Models\User::class),
     'identifier' => env('KERBEROS_IDENTIFIER', 'email'),
     'enabled'    => env('KERBEROS_ENABLED', false),
+    'redirect_to' => env('KERBEROS_REDIRECT_TO'),
 ];

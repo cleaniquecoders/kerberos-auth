@@ -19,9 +19,13 @@ class KerberosMiddleware
         if (! $request->hasHeader(config('kerberos.header_key')) || ! isKerberosEnabled()) {
             return $next($request);
         }
-
+        
         if (! auth()->user()) {
-            auth()->login(getKerberosUser());
+            auth()->login(getKerberosUser($request));
+
+            if(config('kerberos.redirect_to')) {
+                return redirect()->route(config('kerberos.redirect_to'));
+            }
         }
 
         return $next($request);
