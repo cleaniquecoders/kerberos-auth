@@ -11,6 +11,9 @@ class KerberosAuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '/../config/kerberos.php' => config_path('kerberos.php'),
+        ], 'kerberos-auth-config');
     }
 
     /**
